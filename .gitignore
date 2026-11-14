@@ -4,8 +4,6 @@ node_modules/
 .pnp.js
 
 # Environment Variables (Keep keys out of git as required by HACKATHON.md)
-.env
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -28,7 +26,6 @@ yarn-error.log*
 # OS & Editor
 .DS_Store
 Thumbs.db
-.vscode/
 .idea/
 
 # Internal hackathon notes & local artifacts
@@ -41,3 +38,4 @@ data/test-store/
 out/*.png
 
 
+config.bat
