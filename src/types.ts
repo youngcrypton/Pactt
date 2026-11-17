@@ -46,6 +46,8 @@ export interface Bounty {
   required_tier: ApprovalTier;
   council_approved_by: string | null;
   sputnik_proposal_id: number | null; // Set when escalated to Sputnik DAO
+  sputnik_payload?: any | null;       // Raw NEP-145 add_proposal payload for verification
+  sputnik_dao_contract?: string | null; // e.g. "genesis.sputnik-v2.testnet"
   dispute_status?: DisputeStatus; // Bug 6: Anti-drain challenge tracking
   disputed_by?: string | null;
   dispute_reason?: string | null;

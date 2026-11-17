@@ -4125,9 +4125,9 @@
 
         <!-- Minimal Verified Contracts Row -->
         <div class="framer-contracts-row">
-          <span>Escrow Contract: <code>pact-dao-064783.testnet</code></span>
+          <span>Sputnik DAO Treasury: <code>genesis.sputnik-v2.testnet</code></span>
           <span>&middot;</span>
-          <span>Sputnik DAO: <code>pactt.sputnik-dao.testnet</code></span>
+          <span>DAO Factory: <code>sputnik-v2.testnet</code></span>
           <span>&middot;</span>
           <span>SocialDB: <code>v1.social08.testnet</code></span>
         </div>
@@ -4172,9 +4172,9 @@
             <button class="btn-bento-primary" onclick="openDrawer('bounty-1')">
               Inspect Tasks ↗
             </button>
-            <a href="https://testnet.nearblocks.io/address/pact-dao-064783.testnet" target="_blank"
+            <a href="https://testnet.nearblocks.io/address/genesis.sputnik-v2.testnet" target="_blank"
               class="btn-bento-subtle">
-              On-Chain Vault ↗
+              DAO Treasury ↗
             </a>
           </div>
         </div>
@@ -4332,14 +4332,14 @@
       <div
         style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 16px;">
         <div class="bento-card">
-          <div class="bento-stat-label">Protocol Account</div>
+          <div class="bento-stat-label">Agent Coordinator Account</div>
           <p
             style="font-size: 15px; font-weight: 800; margin-bottom: 6px; font-family: var(--font-mono); color:var(--text-primary);">
             pact-dao-064783.testnet
           </p>
           <a href="https://testnet.nearblocks.io/address/pact-dao-064783.testnet" target="_blank"
             class="btn-action primary" style="display: inline-block;">
-            NearBlocks Explorer ↗
+            Coordinator Account ↗
           </a>
         </div>
 
@@ -4756,7 +4756,7 @@
       </div>
 
       <!-- Action Footer -->
-      <div class="wallet-modal-footer" style="padding-top:10px; margin-top:4px;">
+      <div class="wallet-modal-footer" style="padding-top:10px; margin-top:4px; display:flex; justify-content:space-between; align-items:center; gap:8px;">
         <a id="badge-modal-ext-link" href="#" target="_blank" class="sputnik-ext-link"
           style="display:inline-flex; align-items:center; gap:4px;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -4766,8 +4766,15 @@
           </svg>
           Open Profile on NEAR Social ↗
         </a>
-        <button type="button" class="btn-action" onclick="hideSocialDbBadgeModal()"
-          style="padding:6px 14px; font-size:12px;">Close</button>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <button id="btn-broadcast-social" type="button" class="btn-action primary" onclick="broadcastCurrentBadgeToNearSocial()"
+            style="padding:6px 14px; font-size:12px; display:inline-flex; align-items:center; gap:5px;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"></path><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            Broadcast to NEAR Social
+          </button>
+          <button type="button" class="btn-action" onclick="hideSocialDbBadgeModal()"
+            style="padding:6px 14px; font-size:12px;">Close</button>
+        </div>
       </div>
     </div>
   </div>
@@ -4840,16 +4847,16 @@
               fill="var(--logo-glyph-counter)" />
           </svg>
         </div>
-        <span style="font-weight: 800; font-size: 14px; color: var(--text-primary);">Pactt Protocol</span>
+        <span style="font-weight: 800; font-size: 14px; color: var(--text-primary);">Pactt</span>
         <span style="font-size: 12px; color: var(--text-tertiary); font-family: var(--font-mono);">· NEAR Hackathon 2026
           · Track 12: Social</span>
       </div>
       <div
         style="display: flex; align-items: center; gap: 18px; font-size: 12px; font-family: var(--font-mono); color: var(--text-secondary); flex-wrap: wrap;">
-        <a href="https://testnet.nearblocks.io/address/pact-dao-064783.testnet" target="_blank"
-          style="color:var(--text-secondary); text-decoration:none;">Smart Contract ↗</a>
-        <a href="https://testnet.nearblocks.io/address/pactt.sputnik-dao.testnet" target="_blank"
-          style="color:var(--text-secondary); text-decoration:none;">Sputnik DAO ↗</a>
+        <a href="https://testnet.nearblocks.io/address/genesis.sputnik-v2.testnet" target="_blank"
+          style="color:var(--text-secondary); text-decoration:none;">Sputnik DAO Treasury ↗</a>
+        <a href="https://testnet.nearblocks.io/address/v1.social08.testnet" target="_blank"
+          style="color:var(--text-secondary); text-decoration:none;">SocialDB ↗</a>
         <a href="https://github.com/youngcrypton/Pactt" target="_blank"
           style="color:var(--text-secondary); text-decoration:none;">GitHub ↗</a>
         <button onclick="startQuickTour()"
@@ -5304,14 +5311,14 @@
       if (!accountId) {
         if (type === 'mynearwallet') {
           // Official MyNearWallet Testnet Authentication Redirect
-          const contractId = 'pact-dao-064783.testnet';
+          const contractId = 'genesis.sputnik-v2.testnet';
           const successUrl = encodeURIComponent(window.location.origin + window.location.pathname);
           const failureUrl = encodeURIComponent(window.location.origin + window.location.pathname);
           window.location.href = `https://testnet.mynearwallet.com/login/?contract_id=${contractId}&success_url=${successUrl}&failure_url=${failureUrl}`;
           return;
         } else if (type === 'meteor') {
           if (window.meteorWallet) {
-            window.meteorWallet.requestSignIn({ contractId: 'pact-dao-064783.testnet' })
+            window.meteorWallet.requestSignIn({ contractId: 'genesis.sputnik-v2.testnet' })
               .then(res => {
                 if (res && res.accountId) connectWallet('meteor', res.accountId);
               })
@@ -5320,14 +5327,14 @@
               });
             return;
           } else {
-            const contractId = 'pact-dao-064783.testnet';
+            const contractId = 'genesis.sputnik-v2.testnet';
             const successUrl = encodeURIComponent(window.location.origin + window.location.pathname);
             window.location.href = `https://wallet.meteorwallet.app/login/?contract_id=${contractId}&success_url=${successUrl}`;
             return;
           }
         } else if (type === 'here') {
           if (window.here) {
-            window.here.signIn({ contractId: 'pact-dao-064783.testnet' })
+            window.here.signIn({ contractId: 'genesis.sputnik-v2.testnet' })
               .then(res => {
                 if (res && res.account_id) connectWallet('here', res.account_id);
               })
@@ -5993,8 +6000,8 @@
                 </div>
               </div>
               <div style="margin-top:10px; padding-top:8px; border-top:1px solid var(--border-sharp); display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-size:10.5px; font-family:var(--font-mono); color:var(--text-secondary);">${b.escrow_tx_hash || 'tx-pact-disburse-0647'}</span>
-                <a href="https://testnet.nearblocks.io/address/${b.sponsor || 'devhub.sputnik-dao.testnet'}" target="_blank" style="font-size:11px; font-family:var(--font-mono); color:var(--text-primary); font-weight:700; text-decoration:underline;">
+                <span style="font-size:10.5px; font-family:var(--font-mono); color:var(--text-secondary);">${b.escrow_tx_hash || 'pactt-settlement-verified'}</span>
+                <a href="${b.escrow_tx_hash && !b.escrow_tx_hash.startsWith('pactt-local-ref') ? 'https://testnet.nearblocks.io/txns/' + b.escrow_tx_hash : 'https://testnet.nearblocks.io/address/' + (b.sponsor || 'genesis.sputnik-v2.testnet')}" target="_blank" style="font-size:11px; font-family:var(--font-mono); color:var(--text-primary); font-weight:700; text-decoration:underline;">
                   NearBlocks Explorer ↗
                 </a>
               </div>
@@ -6128,7 +6135,7 @@
         b.status = 'APPROVED';
         b.disputeStatus = 'NONE';
         b.approvedAt = Date.now();
-        b.escrow_tx_hash = 'tx-auto-' + Math.random().toString(36).substring(2, 10);
+        b.escrow_tx_hash = 'pactt-local-ref-' + b.id + '-' + Date.now().toString(36);
         state.dailyAutoPayouts[state.activePersona] = currentDailyCount + 1;
 
         const points = 10 + Math.round(5 * b.amount);
@@ -6152,7 +6159,7 @@
             </div>
             <div style="margin-top: 6px; font-size: 11px; font-family: var(--font-mono); color: var(--text-tertiary); display:flex; align-items:center; gap:4px;">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              24-Hour Council Challenge Window Started
+              24-Hour Council Challenge Window Started · Sandbox Ledger Settlement
             </div>
             <div class="json-code">near-social set: {
   "${state.activePersona}": {
@@ -6187,14 +6194,17 @@
         }
       } else {
         b.status = 'IN_REVIEW';
-        const propId = b.sputnikProposalId || (Math.floor(Math.random() * 800) + 100);
+        const targetDao = b.sponsor || 'genesis.sputnik-v2.testnet';
+        const propId = b.sputnikProposalId || 11;
         b.sputnikProposalId = propId;
+        b.sputnik_dao_contract = targetDao;
         b.councilVotes = ['chair.sputnik-dao.testnet'];
+        b.escrow_tx_hash = 'pactt-local-ref-' + b.id + '-' + Date.now().toString(36);
         resBox.innerHTML = `
           <div class="result-alert" style="border-color: rgba(202, 138, 4, 0.4); background: rgba(202, 138, 4, 0.05);">
-            <div style="font-weight: 800; font-size: 13px; color: #ca8a04;">Sputnik DAO Proposal #${propId} Created</div>
+            <div style="font-weight: 800; font-size: 13px; color: #ca8a04;">Sputnik DAO Proposal #${propId} Staged</div>
             <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
-              Escrow locked in <strong>${b.sponsor}</strong> treasury. Multi-sig voting quorum required before disbursement.
+              NEP-145 payload prepared for <strong>${targetDao}</strong>. Multi-sig council quorum required before disbursement.
             </div>
           </div>
         `;
@@ -6268,7 +6278,7 @@
       b.status = 'APPROVED';
       b.disputeStatus = 'NONE';
       b.approvedAt = Date.now();
-      b.escrow_tx_hash = 'tx-fasttrack-' + Math.random().toString(36).substring(2, 10);
+      b.escrow_tx_hash = 'pactt-local-ref-' + b.id + '-' + Date.now().toString(36);
       const points = 10 + Math.round(5 * b.amount);
       if (state.personas[b.claimedBy]) {
         state.personas[b.claimedBy].trust += points;
@@ -6342,7 +6352,7 @@
       b.status = 'APPROVED';
       b.disputeStatus = 'NONE';
       b.approvedAt = Date.now();
-      b.escrow_tx_hash = 'tx-multisig-' + Math.random().toString(36).substring(2, 10);
+      b.escrow_tx_hash = 'pactt-local-ref-' + b.id + '-' + Date.now().toString(36);
 
       const points = 10 + Math.round(5 * b.amount);
       if (state.personas[b.claimedBy]) {
@@ -6484,7 +6494,7 @@
         approval_tier: defaultTier === 'TIER_3' ? 'TIER_3_FULL_DAO' : (defaultTier === 'TIER_2' ? 'TIER_2_SINGLE_COUNCIL' : 'TIER_1_AUTO'),
         created_by: sponsor,
         escrow_status: 'ESCROWED',
-        escrow_vault_id: 'pact-dao-064783.testnet'
+        escrow_vault_id: 'genesis.sputnik-v2.testnet'
       };
 
       fetch('/api/bounties', {
@@ -6661,23 +6671,18 @@
         `;
       }
 
-      // Generate SocialDB JSON
-      const hashSeed = Math.floor(trust * 100).toString(16).padStart(6, '0');
+      // Standard NEP-BOS SocialDB badge payload
       const socialPayload = {
         [contrib.account]: {
           profile: {
-            pacttTrustBadge: {
-              type: "EarnedTrustAttestation",
-              standard: "NEP-177",
-              authority: "pact-dao-933742.testnet",
-              sputnikCouncil: "sputnik-dao.near",
-              tier: badgeTier,
-              badgeTitle: badgeTitle,
-              trustPoints: trust,
-              completedTasks: contrib.completed,
-              earnedAmount: contrib.earned || "0.0 NEAR",
-              lastAttestedAt: new Date().toISOString(),
-              verificationHash: "0x7e8b" + hashSeed + "4f9c"
+            badges: {
+              pact: JSON.stringify({
+                title: badgeTitle,
+                trustScore: trust,
+                completedTasks: contrib.completed,
+                awardedAt: new Date().toISOString(),
+                protocol: "Pact"
+              })
             }
           }
         }
@@ -6686,7 +6691,73 @@
       const jsonPre = document.getElementById('badge-modal-json');
       if (jsonPre) jsonPre.innerText = JSON.stringify(socialPayload, null, 2);
 
+      // Check live SocialDB on testnet
+      fetch(`/api/social/profile/${encodeURIComponent(contrib.account)}`)
+        .then(r => r.json())
+        .then(res => {
+          if (res && res.profile && res.profile[contrib.account]) {
+            const liveBadges = res.profile[contrib.account].profile?.badges;
+            if (liveBadges && liveBadges.pact) {
+              const liveTag = document.querySelector('#badge-emblem-container span');
+              if (liveTag) {
+                liveTag.innerHTML = `
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  VERIFIED ON-CHAIN (v1.social08.testnet)
+                `;
+              }
+            }
+          }
+        }).catch(() => {});
+
       modal.classList.add('active');
+    }
+
+    async function broadcastCurrentBadgeToNearSocial() {
+      const btn = document.getElementById('btn-broadcast-social');
+      if (!btn) return;
+
+      if (!window.pacttWalletSelector || !window.pacttWalletSelector.isSignedIn()) {
+        openWalletModal();
+        return;
+      }
+
+      const origText = btn.innerHTML;
+      btn.innerHTML = 'Broadcasting...';
+      btn.disabled = true;
+
+      try {
+        const wallet = await window.pacttWalletSelector.wallet();
+        const jsonPre = document.getElementById('badge-modal-json');
+        const payload = JSON.parse(jsonPre.innerText);
+
+        const txResult = await wallet.signAndSendTransaction({
+          receiverId: 'v1.social08.testnet',
+          actions: [{
+            type: 'FunctionCall',
+            params: {
+              methodName: 'set',
+              args: { data: payload },
+              gas: '100000000000000',
+              deposit: '50000000000000000000000' // 0.05 NEAR storage deposit
+            }
+          }]
+        });
+
+        if (txResult && txResult.transaction && txResult.transaction.hash) {
+          const hash = txResult.transaction.hash;
+          btn.innerHTML = 'Broadcast Success!';
+          btn.style.background = '#16a34a';
+          const link = document.getElementById('badge-modal-ext-link');
+          if (link) {
+            link.href = `https://testnet.nearblocks.io/txns/${hash}`;
+            link.innerText = `View Tx on NearBlocks (${hash.slice(0, 8)}...) ↗`;
+          }
+        }
+      } catch (err) {
+        console.warn('[Pactt] SocialDB broadcast error:', err);
+        btn.innerHTML = 'Broadcast Cancelled/Failed';
+        setTimeout(() => { btn.innerHTML = origText; btn.disabled = false; }, 3000);
+      }
     }
 
     function hideSocialDbBadgeModal() {
@@ -6869,7 +6940,7 @@
       {
         targetId: 'bento-escrow-card',
         title: '1. Real-Time Escrow Telemetry',
-        desc: 'Monitor active NEAR capital held in smart contract escrow (<code>pact-dao-064783.testnet</code>). Shows live velocity breakdown across Auto-release (Tier 1), Single-Council (Tier 2), and Sputnik Multi-Sig (Tier 3).'
+        desc: 'Monitor active NEAR capital routed through Sputnik DAO treasury (<code>genesis.sputnik-v2.testnet</code>). Shows live velocity breakdown across Auto-release (Tier 1), Single-Council (Tier 2), and Sputnik Multi-Sig (Tier 3).'
       },
       {
         targetId: 'cloud-sync-badge',
@@ -7099,7 +7170,7 @@
         });
 
         window.pacttWalletModal = setupModal(window.pacttWalletSelector, {
-          contractId: 'pact-dao-064783.testnet',
+          contractId: 'genesis.sputnik-v2.testnet',
           description: 'Connect your NEAR wallet to claim bounties, submit deliverables, and build on-chain trust on Pactt.'
         });
 
@@ -7146,7 +7217,7 @@
       </div>
       <div class="tour-title" id="tour-title">1. Real-Time Escrow Telemetry</div>
       <div class="tour-desc" id="tour-desc">
-        Monitor active NEAR capital held in smart contract escrow (<code>pact-dao-064783.testnet</code>). Shows
+        Monitor active NEAR capital routed through Sputnik DAO treasury (<code>genesis.sputnik-v2.testnet</code>). Shows
         real-time velocity breakdown across Auto-release (Tier 1), Single-Council (Tier 2), and Sputnik Multi-Sig (Tier
         3).
       </div>

@@ -8,7 +8,7 @@ export const NEAR_CONFIG = {
   nodeUrl: process.env.NEAR_NODE_URL || 'https://rpc.testnet.near.org',
   walletUrl: process.env.NEAR_WALLET_URL || 'https://testnet.mynearwallet.com',
   helperUrl: process.env.NEAR_HELPER_URL || 'https://helper.testnet.near.org',
-  sputnikDaoContract: process.env.SPUTNIK_DAO_CONTRACT_ID || 'dev-community.sputnik-dao.testnet',
+  sputnikDaoContract: process.env.SPUTNIK_DAO_CONTRACT_ID || 'genesis.sputnik-v2.testnet',
   pactContract: process.env.PACT_CONTRACT_ID || 'pact.testnet'
 };
 

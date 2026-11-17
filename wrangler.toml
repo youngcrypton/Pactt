@@ -8,5 +8,5 @@ not_found_handling = "single-page-application"
 
 [vars]
 NEAR_NETWORK_ID = "testnet"
-SPUTNIK_DAO_CONTRACT_ID = "dev-community.sputnik-dao.testnet"
+SPUTNIK_DAO_CONTRACT_ID = "genesis.sputnik-v2.testnet"
 PACT_CONTRACT_ID = "pact.testnet"

@@ -9,17 +9,36 @@
       "category": "DEV",
       "created_by": "community.sputnik-dao.testnet",
       "claimed_by": "bob-newbie.testnet",
-      "claimed_at": 1794614475606,
+      "claimed_at": 1794887705503,
       "proof_url": "https://github.com/near-daos/audit/pull/1",
       "submission_notes": null,
       "status": "ESCALATED_TO_DAO",
       "escrow_status": "ESCROWED",
-      "escrow_tx_hash": "tx-escrow-1794614475600",
+      "escrow_tx_hash": "tx-escrow-1794887705499",
       "required_tier": "TIER_3_FULL_DAO",
       "council_approved_by": null,
-      "sputnik_proposal_id": 909,
-      "created_at": 1794614475600,
-      "completed_at": null
+      "sputnik_proposal_id": 11,
+      "created_at": 1794887705499,
+      "completed_at": null,
+      "sputnik_dao_contract": "genesis.sputnik-v2.testnet",
+      "sputnik_payload": {
+        "targetContract": "genesis.sputnik-v2.testnet",
+        "method": "add_proposal",
+        "args": {
+          "proposal": {
+            "description": "[Pact Escrow] Bounty #bounty-1 (\"Major Protocol Audit\") completed by @bob-newbie.testnet. Payout authorization requested.",
+            "kind": {
+              "Transfer": {
+                "token_id": "",
+                "receiver_id": "bob-newbie.testnet",
+                "amount": "30000000000000000000000000"
+              }
+            }
+          }
+        },
+        "deposit": "1000000000000000000000000",
+        "gas": "100000000000000"
+      }
     },
     {
       "id": "bounty-2",
@@ -30,17 +49,36 @@
       "category": "DEV",
       "created_by": "community.sputnik-dao.testnet",
       "claimed_by": "alice.testnet",
-      "claimed_at": 1794614475634,
+      "claimed_at": 1794887705519,
       "proof_url": "https://github.com/near/fix/pull/10",
       "submission_notes": null,
       "status": "APPROVED",
       "escrow_status": "DISBURSED",
-      "escrow_tx_hash": "tx-escrow-1794614475624",
+      "escrow_tx_hash": "tx-escrow-1794887705516",
       "required_tier": "TIER_3_FULL_DAO",
       "council_approved_by": "council-member.testnet",
-      "sputnik_proposal_id": 124,
-      "created_at": 1794614475624,
-      "completed_at": 1794614475640
+      "sputnik_proposal_id": 12,
+      "created_at": 1794887705516,
+      "completed_at": 1794887705530,
+      "sputnik_dao_contract": "genesis.sputnik-v2.testnet",
+      "sputnik_payload": {
+        "targetContract": "genesis.sputnik-v2.testnet",
+        "method": "add_proposal",
+        "args": {
+          "proposal": {
+            "description": "[Pact Escrow] Bounty #bounty-2 (\"Initial Fix\") completed by @alice.testnet. Payout authorization requested.",
+            "kind": {
+              "Transfer": {
+                "token_id": "",
+                "receiver_id": "alice.testnet",
+                "amount": "5000000000000000000000000"
+              }
+            }
+          }
+        },
+        "deposit": "1000000000000000000000000",
+        "gas": "100000000000000"
+      }
     },
     {
       "id": "bounty-3",
@@ -51,17 +89,17 @@
       "category": "DEV",
       "created_by": "community.sputnik-dao.testnet",
       "claimed_by": "alice.testnet",
-      "claimed_at": 1794614475647,
+      "claimed_at": 1794887705539,
       "proof_url": "https://github.com/near/sdk/pull/42",
       "submission_notes": null,
       "status": "APPROVED",
       "escrow_status": "DISBURSED",
-      "escrow_tx_hash": "tx-escrow-1794614475644",
+      "escrow_tx_hash": "tx-escrow-1794887705534",
       "required_tier": "TIER_2_SINGLE_COUNCIL",
       "council_approved_by": "council-member.testnet",
       "sputnik_proposal_id": null,
-      "created_at": 1794614475644,
-      "completed_at": 1794614475653
+      "created_at": 1794887705534,
+      "completed_at": 1794887705555
     },
     {
       "id": "bounty-4",
@@ -72,17 +110,17 @@
       "category": "DEV",
       "created_by": "community.sputnik-dao.testnet",
       "claimed_by": "alice.testnet",
-      "claimed_at": 1794614475671,
+      "claimed_at": 1794887705566,
       "proof_url": "https://github.com/near/docs/pull/101",
       "submission_notes": null,
       "status": "APPROVED",
       "escrow_status": "DISBURSED",
-      "escrow_tx_hash": "tx-escrow-1794614475664",
+      "escrow_tx_hash": "tx-escrow-1794887705562",
       "required_tier": "TIER_1_AUTO",
       "council_approved_by": null,
       "sputnik_proposal_id": null,
-      "created_at": 1794614475664,
-      "completed_at": 1794614475678
+      "created_at": 1794887705562,
+      "completed_at": 1794887705569
     },
     {
       "id": "bounty-5",
@@ -93,16 +131,16 @@
       "category": "DEV",
       "created_by": "dao.testnet",
       "claimed_by": "first-user.testnet",
-      "claimed_at": 1794614475686,
+      "claimed_at": 1794887705580,
       "proof_url": null,
       "submission_notes": null,
       "status": "CLAIMED",
       "escrow_status": "ESCROWED",
-      "escrow_tx_hash": "tx-escrow-1794614475684",
+      "escrow_tx_hash": "tx-escrow-1794887705575",
       "required_tier": "TIER_3_FULL_DAO",
       "council_approved_by": null,
       "sputnik_proposal_id": null,
-      "created_at": 1794614475684,
+      "created_at": 1794887705575,
       "completed_at": null
     },
     {
@@ -123,7 +161,7 @@
       "required_tier": "TIER_3_FULL_DAO",
       "council_approved_by": null,
       "sputnik_proposal_id": null,
-      "created_at": 1794614475692,
+      "created_at": 1794887705586,
       "completed_at": null
     },
     {
@@ -140,11 +178,11 @@
       "submission_notes": null,
       "status": "REJECTED",
       "escrow_status": "REFUNDED",
-      "escrow_tx_hash": "tx-escrow-1794614475695",
+      "escrow_tx_hash": "tx-escrow-1794887705594",
       "required_tier": "TIER_3_FULL_DAO",
       "council_approved_by": null,
       "sputnik_proposal_id": null,
-      "created_at": 1794614475695,
+      "created_at": 1794887705594,
       "completed_at": null
     },
     {
@@ -156,17 +194,36 @@
       "category": "DEV",
       "created_by": "math.testnet",
       "claimed_by": "math-dev.testnet",
-      "claimed_at": 1794614475711,
+      "claimed_at": 1794887705611,
       "proof_url": "https://github.com/near/math/pull/1",
       "submission_notes": null,
       "status": "APPROVED",
       "escrow_status": "DISBURSED",
-      "escrow_tx_hash": "tx-escrow-1794614475704",
+      "escrow_tx_hash": "tx-escrow-1794887705605",
       "required_tier": "TIER_3_FULL_DAO",
       "council_approved_by": "council-member.testnet",
-      "sputnik_proposal_id": 532,
-      "created_at": 1794614475704,
-      "completed_at": 1794614475717
+      "sputnik_proposal_id": 13,
+      "created_at": 1794887705605,
+      "completed_at": 1794887705617,
+      "sputnik_dao_contract": "genesis.sputnik-v2.testnet",
+      "sputnik_payload": {
+        "targetContract": "genesis.sputnik-v2.testnet",
+        "method": "add_proposal",
+        "args": {
+          "proposal": {
+            "description": "[Pact Escrow] Bounty #bounty-8 (\"Precision Micro Bounty\") completed by @math-dev.testnet. Payout authorization requested.",
+            "kind": {
+              "Transfer": {
+                "token_id": "",
+                "receiver_id": "math-dev.testnet",
+                "amount": "1500000000000000000000000"
+              }
+            }
+          }
+        },
+        "deposit": "1000000000000000000000000",
+        "gas": "100000000000000"
+      }
     },
     {
       "id": "bounty-9",
@@ -177,17 +234,36 @@
       "category": "DEV",
       "created_by": "dao.testnet",
       "claimed_by": "dev-a.testnet",
-      "claimed_at": 1794614475725,
+      "claimed_at": 1794887705624,
       "proof_url": "https://github.com/near/core-contracts/pull/777",
       "submission_notes": null,
       "status": "ESCALATED_TO_DAO",
       "escrow_status": "ESCROWED",
-      "escrow_tx_hash": "tx-escrow-1794614475721",
+      "escrow_tx_hash": "tx-escrow-1794887705621",
       "required_tier": "TIER_3_FULL_DAO",
       "council_approved_by": null,
-      "sputnik_proposal_id": 941,
-      "created_at": 1794614475721,
-      "completed_at": null
+      "sputnik_proposal_id": 14,
+      "created_at": 1794887705621,
+      "completed_at": null,
+      "sputnik_dao_contract": "genesis.sputnik-v2.testnet",
+      "sputnik_payload": {
+        "targetContract": "genesis.sputnik-v2.testnet",
+        "method": "add_proposal",
+        "args": {
+          "proposal": {
+            "description": "[Pact Escrow] Bounty #bounty-9 (\"Original Task\") completed by @dev-a.testnet. Payout authorization requested.",
+            "kind": {
+              "Transfer": {
+                "token_id": "",
+                "receiver_id": "dev-a.testnet",
+                "amount": "3000000000000000000000000"
+              }
+            }
+          }
+        },
+        "deposit": "1000000000000000000000000",
+        "gas": "100000000000000"
+      }
     },
     {
       "id": "bounty-10",
@@ -198,16 +274,16 @@
       "category": "DEV",
       "created_by": "dao.testnet",
       "claimed_by": "dev-b.testnet",
-      "claimed_at": 1794614475736,
+      "claimed_at": 1794887705636,
       "proof_url": "https://github.com/near/core-contracts/pull/777",
       "submission_notes": null,
       "status": "CLAIMED",
       "escrow_status": "ESCROWED",
-      "escrow_tx_hash": "tx-escrow-1794614475734",
+      "escrow_tx_hash": "tx-escrow-1794887705633",
       "required_tier": "TIER_3_FULL_DAO",
       "council_approved_by": null,
       "sputnik_proposal_id": null,
-      "created_at": 1794614475734,
+      "created_at": 1794887705633,
       "completed_at": null
     },
     {
@@ -219,17 +295,36 @@
       "category": "DEV",
       "created_by": "dao.testnet",
       "claimed_by": "speedy.testnet",
-      "claimed_at": 1794614475744,
+      "claimed_at": 1794887705647,
       "proof_url": "https://github.com/near/warmup/pull/1",
       "submission_notes": null,
       "status": "APPROVED",
       "escrow_status": "DISBURSED",
-      "escrow_tx_hash": "tx-escrow-1794614475741",
+      "escrow_tx_hash": "tx-escrow-1794887705641",
       "required_tier": "TIER_3_FULL_DAO",
       "council_approved_by": "council-member.testnet",
-      "sputnik_proposal_id": 923,
-      "created_at": 1794614475741,
-      "completed_at": 1794614475752
+      "sputnik_proposal_id": 15,
+      "created_at": 1794887705641,
+      "completed_at": 1794887705654,
+      "sputnik_dao_contract": "genesis.sputnik-v2.testnet",
+      "sputnik_payload": {
+        "targetContract": "genesis.sputnik-v2.testnet",
+        "method": "add_proposal",
+        "args": {
+          "proposal": {
+            "description": "[Pact Escrow] Bounty #bounty-11 (\"Setup Trust\") completed by @speedy.testnet. Payout authorization requested.",
+            "kind": {
+              "Transfer": {
+                "token_id": "",
+                "receiver_id": "speedy.testnet",
+                "amount": "10000000000000000000000000"
+              }
+            }
+          }
+        },
+        "deposit": "1000000000000000000000000",
+        "gas": "100000000000000"
+      }
     },
     {
       "id": "bounty-12",
@@ -240,21 +335,21 @@
       "category": "DEV",
       "created_by": "dao.testnet",
       "claimed_by": "speedy.testnet",
-      "claimed_at": 1794614475759,
+      "claimed_at": 1794887705661,
       "proof_url": "https://github.com/near/speed/pull/1",
       "submission_notes": null,
       "status": "REJECTED",
       "escrow_status": "DISBURSED",
-      "escrow_tx_hash": "tx-escrow-1794614475756",
+      "escrow_tx_hash": "tx-escrow-1794887705657",
       "required_tier": "TIER_1_AUTO",
       "council_approved_by": null,
       "sputnik_proposal_id": null,
-      "created_at": 1794614475756,
-      "completed_at": 1794614475762,
+      "created_at": 1794887705657,
+      "completed_at": 1794887705664,
       "dispute_status": "CHALLENGED",
       "disputed_by": "council-member.testnet",
       "dispute_reason": "Empty PR detected post-settlement",
-      "dispute_challenged_at": 1794614475800
+      "dispute_challenged_at": 1794887705699
     },
     {
       "id": "bounty-13",
@@ -265,17 +360,17 @@
       "category": "DEV",
       "created_by": "dao.testnet",
       "claimed_by": "speedy.testnet",
-      "claimed_at": 1794614475778,
+      "claimed_at": 1794887705671,
       "proof_url": "https://github.com/near/speed/pull/2",
       "submission_notes": null,
       "status": "APPROVED",
       "escrow_status": "DISBURSED",
-      "escrow_tx_hash": "tx-escrow-1794614475775",
+      "escrow_tx_hash": "tx-escrow-1794887705668",
       "required_tier": "TIER_1_AUTO",
       "council_approved_by": null,
       "sputnik_proposal_id": null,
-      "created_at": 1794614475775,
-      "completed_at": 1794614475782
+      "created_at": 1794887705668,
+      "completed_at": 1794887705674
     },
     {
       "id": "bounty-14",
@@ -286,16 +381,16 @@
       "category": "DEV",
       "created_by": "dao.testnet",
       "claimed_by": "speedy.testnet",
-      "claimed_at": 1794614475788,
+      "claimed_at": 1794887705686,
       "proof_url": "https://github.com/near/speed/pull/3",
       "submission_notes": null,
       "status": "IN_REVIEW",
       "escrow_status": "ESCROWED",
-      "escrow_tx_hash": "tx-escrow-1794614475785",
+      "escrow_tx_hash": "tx-escrow-1794887705683",
       "required_tier": "TIER_2_SINGLE_COUNCIL",
       "council_approved_by": null,
       "sputnik_proposal_id": null,
-      "created_at": 1794614475785,
+      "created_at": 1794887705683,
       "completed_at": null
     }
   ],
@@ -322,21 +417,21 @@
         {
           "bounty_id": "bounty-2",
           "points_awarded": 35,
-          "timestamp": 1794614475640,
+          "timestamp": 1794887705530,
           "reason": "Completed Bounty: Initial Fix (5 NEAR)",
           "is_auto_tier1": false
         },
         {
           "bounty_id": "bounty-3",
           "points_awarded": 85,
-          "timestamp": 1794614475653,
+          "timestamp": 1794887705555,
           "reason": "Completed Bounty: SDK Enhancement (15 NEAR)",
           "is_auto_tier1": false
         },
         {
           "bounty_id": "bounty-4",
           "points_awarded": 30,
-          "timestamp": 1794614475678,
+          "timestamp": 1794887705569,
           "reason": "Completed Bounty: Update Docs link (4 NEAR)",
           "is_auto_tier1": true
         }
@@ -354,7 +449,7 @@
         {
           "bounty_id": "bounty-8",
           "points_awarded": 17,
-          "timestamp": 1794614475717,
+          "timestamp": 1794887705617,
           "reason": "Completed Bounty: Precision Micro Bounty (1.5 NEAR)",
           "is_auto_tier1": false
         }
@@ -382,28 +477,28 @@
         {
           "bounty_id": "bounty-11",
           "points_awarded": 60,
-          "timestamp": 1794614475752,
+          "timestamp": 1794887705654,
           "reason": "Completed Bounty: Setup Trust (10 NEAR)",
           "is_auto_tier1": false
         },
         {
           "bounty_id": "bounty-12",
           "points_awarded": 25,
-          "timestamp": 1794614475762,
+          "timestamp": 1794887705664,
           "reason": "Completed Bounty: Task 1 (3 NEAR)",
           "is_auto_tier1": true
         },
         {
           "bounty_id": "bounty-13",
           "points_awarded": 25,
-          "timestamp": 1794614475782,
+          "timestamp": 1794887705674,
           "reason": "Completed Bounty: Task 2 (3 NEAR)",
           "is_auto_tier1": true
         },
         {
           "bounty_id": "bounty-12",
           "points_awarded": -30,
-          "timestamp": 1794614475801,
+          "timestamp": 1794887705699,
           "reason": "Council Slash: Empty PR detected post-settlement"
         }
       ]
@@ -451,5 +546,5 @@
       "bounty-14"
     ]
   ],
-  "updatedAt": 1794614475801
+  "updatedAt": 1794887705699
 }

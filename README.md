@@ -12,7 +12,7 @@
 
 <p align="center">
   <a href="https://near.org"><img src="https://img.shields.io/badge/NEAR-Protocol-000000.svg" alt="NEAR Protocol" /></a>
-  <a href="https://github.com/youngcrypton/Pactt"><img src="https://img.shields.io/badge/Tests-33%20Passing-10b981.svg" alt="Tests" /></a>
+  <a href="https://github.com/youngcrypton/Pactt"><img src="https://img.shields.io/badge/Tests-41%20Passing-10b981.svg" alt="Tests" /></a>
   <a href="https://pactt.xyz/"><img src="https://img.shields.io/badge/Live%20App-pactt.xyz-10b981.svg" alt="Live App" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" /></a>
 </p>
@@ -113,8 +113,9 @@ npm install
 ```bash
 npm test
 ```
-All **33 unit and integration tests** pass across 4 comprehensive suites in ~2.2 seconds:
-* **Pact API Integration (13 tests):** Validates REST endpoints, escrow custody, and storage persistence.
+All **41 unit and integration tests** pass across 5 comprehensive suites in ~2.5 seconds:
+* **Pact API Integration (16 tests):** Validates REST endpoints, escrow custody, storage persistence, and live Sputnik/SocialDB bridge routes.
+* **Sputnik DAO v2 & NEAR Social DB Connectors (5 tests):** Validates NEP-145 payload generation, VoteApprove actions, live RPC querying, and SocialDB profile attestation.
 * **Resilient Storage Architecture (3 tests):** Validates Supabase PostgreSQL sync and offline disk hydration across restarts.
 * **Tiered Approvals & Trust Engine (13 tests):** Validates Tier 1 auto-settlement, Tier 2 council sign-off, Tier 3 Sputnik escalation, BigInt precision, PR deduplication, velocity caps, and council dispute slashing.
 * **NEAR Wallet & NEP-413 Auth (4 tests):** Validates cryptographic Ed25519 signature signing, verification, and challenge generation.
@@ -147,6 +148,9 @@ Serves the responsive protocol interface on `http://localhost:3000`.
 | `/api/bounties/:id/submit`| `POST` | Submit deliverable proof & trigger tier routing | `{ contributor_id, proof_url, notes }` |
 | `/api/bounties/:id/approve`| `POST`| Single-council sign-off (Tier 2) | `{ council_account_id }` |
 | `/api/bounties/:id/challenge`| `POST`| 24h council dispute & reputation slash | `{ council_account_id, reason, slash_points }` |
+| `/api/sputnik/status` | `GET` | Live Sputnik DAO v2 contract status & sequence | None |
+| `/api/sputnik/proposals` | `GET` | Live Sputnik DAO proposals slice | `from_index, limit` |
+| `/api/social/profile/:id`| `GET`| Live on-chain SocialDB profile & badges | None |
 | `/api/escrow` | `GET` | Escrow vault metrics & yoctoNEAR breakdown | None |
 | `/api/storage` | `GET` | Storage engine status (Supabase cloud vs local) | None |
 | `/api/leaderboard` | `GET` | Retrieve contributor reputation rankings | None |

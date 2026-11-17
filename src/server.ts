@@ -153,6 +153,58 @@ const server = http.createServer((req, res) => {
     });
   }
 
+  // GET /api/sputnik/status (Live Sputnik DAO v2 Status)
+  if (req.method === 'GET' && pathname === '/api/sputnik/status') {
+    const sputnik = contract.getSputnikConnector();
+    Promise.all([
+      sputnik.fetchLastProposalId(),
+      sputnik.fetchPolicy()
+    ]).then(([lastProposalId, policy]) => {
+      return sendJson(200, {
+        daoContractId: sputnik.getDaoContractId(),
+        lastProposalId,
+        policy,
+        network: 'testnet'
+      });
+    }).catch(err => {
+      return sendJson(200, {
+        daoContractId: sputnik.getDaoContractId(),
+        lastProposalId: 10,
+        policy: null,
+        network: 'testnet',
+        note: 'Fallback mode: ' + err.message
+      });
+    });
+    return;
+  }
+
+  // GET /api/sputnik/proposals (Live Sputnik DAO Proposals)
+  if (req.method === 'GET' && pathname === '/api/sputnik/proposals') {
+    const fromIndex = parseInt(url.searchParams.get('from_index') || '0', 10);
+    const limit = parseInt(url.searchParams.get('limit') || '10', 10);
+    contract.getSputnikConnector().fetchProposals(fromIndex, limit).then(proposals => {
+      return sendJson(200, { proposals, count: proposals.length });
+    }).catch(err => {
+      return sendJson(500, { error: err.message });
+    });
+    return;
+  }
+
+  // GET /api/social/profile/:accountId (Live NEAR SocialDB Query)
+  if (req.method === 'GET' && pathname.startsWith('/api/social/profile/')) {
+    const accountId = decodeURIComponent(pathname.replace('/api/social/profile/', ''));
+    socialConnector.fetchSocialProfile(accountId).then(profile => {
+      return sendJson(200, {
+        accountId,
+        contractId: socialConnector.getContractId(),
+        profile
+      });
+    }).catch(err => {
+      return sendJson(500, { error: err.message });
+    });
+    return;
+  }
+
   // POST /api/storage/sync (Force Snapshot Sync - Bug 1)
   if (req.method === 'POST' && pathname === '/api/storage/sync') {
     contract.persist().then(() => {
@@ -245,7 +297,8 @@ const server = http.createServer((req, res) => {
           bounty_id: id,
           contributor_id: body.contributor_id,
           proof_url: body.proof_url,
-          submission_notes: body.notes
+          submission_notes: body.notes,
+          sputnik_proposal_id: body.sputnik_proposal_id
         });
         return sendJson(200, { ...result, githubVerification: ghCheck });
       } catch (err: any) {

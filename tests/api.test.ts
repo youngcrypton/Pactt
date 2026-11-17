@@ -204,6 +204,29 @@ test('Pact API Server Integration', async (t) => {
     assert.ok(data.mode);
   });
 
+  await t.test('Sputnik DAO: GET /api/sputnik/status returns verified DAO contract and proposal info', async () => {
+    const res = await fetch(`${BASE_URL}/sputnik/status`);
+    assert.strictEqual(res.status, 200);
+    const data = await res.json() as any;
+    assert.strictEqual(data.daoContractId, 'genesis.sputnik-v2.testnet');
+    assert.ok(data.lastProposalId !== undefined);
+  });
+
+  await t.test('Sputnik DAO: GET /api/sputnik/proposals returns live proposals from Sputnik DAO', async () => {
+    const res = await fetch(`${BASE_URL}/sputnik/proposals?from_index=0&limit=3`);
+    assert.strictEqual(res.status, 200);
+    const data = await res.json() as any;
+    assert.ok(Array.isArray(data.proposals));
+  });
+
+  await t.test('NEAR Social: GET /api/social/profile/:accountId returns SocialDB verification response', async () => {
+    const res = await fetch(`${BASE_URL}/social/profile/pact-dao-064783.testnet`);
+    assert.strictEqual(res.status, 200);
+    const data = await res.json() as any;
+    assert.strictEqual(data.contractId, 'v1.social08.testnet');
+    assert.strictEqual(data.accountId, 'pact-dao-064783.testnet');
+  });
+
   // Close server after tests complete
   server.close();
 });

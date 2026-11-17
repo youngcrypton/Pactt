@@ -11,7 +11,7 @@ const bounty = contract.create_bounty({
   description: 'Refactor cross-contract transfer calls to reduce gas units by 20%',
   amount_formatted: 4.5,
   category: 'DEV',
-  created_by: 'dev-community.sputnik-dao.testnet'
+  created_by: 'genesis.sputnik-v2.testnet'
 });
 
 console.log('Sample Open Bounty:', bounty);
