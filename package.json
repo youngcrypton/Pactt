@@ -5,17 +5,17 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc && node scripts/prepare-dist.mjs",
-    "build:cloudflare": "tsc && node scripts/prepare-dist.mjs",
+    "build": "node init && tsc && node scripts/prepare-dist.mjs",
+    "build:cloudflare": "node init && tsc && node scripts/prepare-dist.mjs",
     "test": "tsx --test tests/**/*.test.ts",
     "seed": "tsx scripts/seed-bounties.ts",
     "demo": "tsx scripts/demo-simulation.ts",
     "broadcast": "tsx scripts/broadcast-testnet.ts",
-    "dev": "tsx src/index.ts",
+    "dev": "node init && tsx src/index.ts",
     "video:render": "node scripts/render-demo.mjs",
     "video:still": "npx remotion still src/remotion/index.ts PacttDemo out/frame.png",
     "api": "tsx src/server.ts",
-    "start": "tsx src/server.ts"
+    "start": "node init && tsx src/server.ts"
   },
   "keywords": [
     "near",
